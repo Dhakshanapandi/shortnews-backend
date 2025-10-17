@@ -2,15 +2,15 @@ name: 📰 Run Tamil News Pipeline Every 2 Hours
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # Runs every 2 hours
-  workflow_dispatch:        # Allows manual run from GitHub Actions tab
+    - cron: "0 */2 * * *"   # every 2 hours
+  workflow_dispatch:         # allow manual runs
 
 jobs:
-  run:
+  run-tamil:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📦 Checkout repository
+      - name: 🛎️ Checkout code
         uses: actions/checkout@v4
 
       - name: ⚙️ Setup Node.js
@@ -18,22 +18,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: 🧰 Install dependencies
+      - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🚀 Run Tamil pipeline
-        run: node src/main.js
+      - name: 🧠 Run Tamil pipeline
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-          FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
           FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
-
-      - name: 📤 Upload logs and outputs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: tamil-pipeline-outputs
-          path: |
-            logs/
-            output/
+          FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
+        run: |
+          cd src
+          node main.js
