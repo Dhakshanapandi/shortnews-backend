@@ -1,0 +1,32 @@
+[
+  {
+    "site": "dinamalar",
+    "category": "world",
+    "count": 2,
+    "status": "success"
+  },
+  {
+    "site": "dinamalar",
+    "category": "latest",
+    "count": 22,
+    "status": "success"
+  },
+  {
+    "site": "dinamalar",
+    "category": "india",
+    "count": 14,
+    "status": "success"
+  },
+  {
+    "site": "vikatan",
+    "category": "cinema",
+    "count": 11,
+    "status": "success"
+  },
+  {
+    "site": "dinamalar",
+    "category": "sports",
+    "count": 3,
+    "status": "success"
+  }
+]

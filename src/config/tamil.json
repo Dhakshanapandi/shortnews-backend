@@ -1,0 +1,13 @@
+{
+  "language": "tamil",
+  "categories": {
+    "world":["https://www.dinamalar.com/news/world-tamil-news"],
+    "latest": [
+      "https://www.dinamalar.com/news/latest-tamil-news"
+    ],
+    "india": ["https://www.dinamalar.com/news/india-tamil-news"],
+    "cinema": ["https://cinema.vikatan.com/"],
+    "sports": ["https://www.dinamalar.com/news/sports"
+    ]
+  }
+}
